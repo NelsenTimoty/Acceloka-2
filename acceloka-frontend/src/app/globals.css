@@ -1,0 +1,144 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Root Colors */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --primary: #2563eb;
+  --primary-hover: #1e40af;
+  --danger: #dc2626;
+  --danger-hover: #b91c1c;
+  --success: #22c55e;
+  --success-hover: #16a34a;
+  --card-bg: #f9fafb;
+  --border-color: #e5e7eb;
+}
+
+/* Dark Mode */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+    --card-bg: #121212;
+    --border-color: #1f2937;
+  }
+}
+
+/* Global Styles */
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: 'Inter', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* Ticket Card Styles */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin-top: 100px;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Buttons */
+button {
+  font-weight: 600;
+  cursor: pointer;
+  border-radius: 8px;
+  padding: 10px 16px;
+  transition: all 0.3s ease;;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.btn-primary {
+  background-color: var(--primary);
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: var(--primary-hover);
+}
+
+.btn-danger {
+  background-color: var(--danger);
+  color: white;
+}
+
+.btn-danger:hover {
+  background-color: var(--danger-hover);
+}
+
+.btn-success {
+  background-color: var(--success);
+  color: white;
+}
+
+.btn-success:hover {
+  background-color: var(--success-hover);
+}
+
+/* Inputs */
+input {
+  border: 1px solid var(--border-color);
+  border-radius: 6px;
+  padding: 10px;
+  width: 100%;
+  font-size: 16px;
+  transition: border 0.2s ease;
+}
+
+input:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 5px rgba(37, 99, 235, 0.5);
+}
+
+/* Messages */
+.message {
+  font-size: 16px;
+  font-weight: 600;
+  text-align: center;
+  padding: 8px;
+  border-radius: 6px;
+}
+
+.message.success {
+  color: var(--success);
+}
+
+.message.error {
+  color: var(--danger);
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.message {
+  margin-top: 100px;
+}
