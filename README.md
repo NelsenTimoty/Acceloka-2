@@ -13,6 +13,19 @@ pnpm dev
 # or
 bun dev
 ```
+If it displays
+```bash
+> acceloka-frontend@0.1.0 dev
+> next dev --turbopack
+
+'next' is not recognized as an internal or external command,
+operable program or batch file.
+```
+Then, do the command
+```bash
+npm install
+```
+and make sure Next.js is installed
 
 Then, run the backend server, "Acceloka API":
 ```bash
